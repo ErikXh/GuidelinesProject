@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Cancellation", 
+        "Updated": "2023-10-30", 
+        "content": "<p>This is the content of the first article. Here are some common reasons for cancellation:</p><ul><li>Unexpected changes in plans</li><li>Health issues</li><li>Weather conditions</li></ul><p>Refer to our cancellation policy for more details.</p>",
+        "Tags": "reservation, cancellation"
+    },
+    {
+        "title": "Date change", 
+        "Updated": "2024-05-09", 
+        "content": "<p>Content for the second article goes here. Here are options for date modification:</p><ul><li>Request a change online</li><li>Contact customer service</li><li>Use the app to modify your date</li></ul>",
+        "Tags": "date, modification, emendment"
+    },
+    {
+        "title": "Special request", 
+        "Updated": "2024-03-29", 
+        "content": "<p>Content for the third article goes here. Types of special requests include:</p><ul><li>Dietary preferences</li><li>Extra amenities</li><li>Late check-out</li></ul>",
+        "Tags": "special request, emendment"
+    },
+    {
+        "title": "Refund", 
+        "Updated": "2024-08-17", 
+        "content": "<p>Content for the fourth article goes here. To request a refund, follow these steps:</p><ul><li>Submit the refund form</li><li>Contact support with your booking ID</li><li>Allow up to 7 days for processing</li></ul>",
+        "Tags": "refund"
+    },
+    {
+        "title": "Complaints - General", 
+        "Updated": "2024-01-26", 
+        "content": "<p>Content for the fifth article goes here. Common complaint topics include:</p><ul><li>Service quality</li><li>Delay issues</li><li>Billing discrepancies</li></ul>",
+        "Tags": "complaint"
+    }
+]
