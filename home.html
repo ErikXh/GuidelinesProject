@@ -17,6 +17,19 @@
     <button id="search-button" onclick="searchGuidelines()">Search</button>
     </div>
 
+    <div class="most-searched-section">
+        <h3>Most Searched</h3>
+        <ul id="most-searched-list"></ul>
+    </div>
+
+    <div class="sort-section">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options" onchange="sortGuidelines()">
+            <option value="title">Title</option>
+            <option value="date">Last Updated</option>
+        </select>
+    </div>    
+
     <div class="guideline-container">
     </div>
     

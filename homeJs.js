@@ -76,3 +76,78 @@ searchInput.addEventListener("keypress", function(event) {
         searchGuidelines();
     }
 });
+
+let searchCounts = JSON.parse(localStorage.getItem('searchCounts')) || {};
+
+function updateMostSearched() {
+    const mostSearchedList = document.getElementById('most-searched-list');
+    mostSearchedList.innerHTML = ""; // Clear the list
+
+    // Get top 5 most searched terms
+    const sortedSearches = Object.entries(searchCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+
+    sortedSearches.forEach(([term, count]) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${term} (${count})`;
+        mostSearchedList.appendChild(listItem);
+    });
+}
+
+function searchGuidelines() {
+    const searchBar = document.getElementById("search-input");
+    const filter = searchBar.value.toLowerCase();
+
+    if (filter) {
+        // Track the search term
+        searchCounts[filter] = (searchCounts[filter] || 0) + 1;
+        localStorage.setItem('searchCounts', JSON.stringify(searchCounts));
+    }
+
+    // Perform the existing search logic
+    const gContainers = document.getElementsByClassName("guidelineExpanded");
+
+    if (filter === "") {
+        for (let i = 0; i < gContainers.length; i++) {
+            gContainers[i].style.display = "";
+        }
+        return;
+    }
+
+    for (let i = 0; i < gContainers.length; i++) {
+        const gName = gContainers[i].querySelector('[data-title]').getAttribute("data-title");
+        const gTags = gContainers[i].querySelector('[data-tags]').getAttribute("data-tags");
+
+        if (gName.includes(filter) || gTags.includes(filter)) {
+            gContainers[i].style.display = "";
+        } else {
+            gContainers[i].style.display = "none";
+        }
+    }
+
+    // Update the "Most Searched" section
+    updateMostSearched();
+}
+
+// Initialize the "Most Searched" section on load
+updateMostSearched();
+
+function sortGuidelines() {
+    const sortOption = document.getElementById("sort-options").value;
+
+    fetch('homeGuidelines.json')
+        .then(response => response.json())
+        .then(data => {
+            if (sortOption === "title") {
+                data.sort((a, b) => a.title.localeCompare(b.title));
+            } else if (sortOption === "date") {
+                data.sort((a, b) => new Date(b.Updated) - new Date(a.Updated));
+            }
+
+            // Clear the container and redisplay guidelines
+            guidelineContainer.innerHTML = "";
+            displayGuideline(data);
+        })
+        .catch(error => console.error('Error fetching or sorting data:', error));
+}

@@ -28,5 +28,18 @@
         "Updated": "2024-01-26", 
         "content": "<p>Content for the fifth article goes here. Common complaint topics include:</p><ul><li>Service quality</li><li>Delay issues</li><li>Billing discrepancies</li></ul>",
         "Tags": "complaint"
+    },
+    {
+        "title": "Complaints - Refund Specific", 
+        "Updated": "2024-05-26", 
+        "content": "<p>Content for the fifth article goes here. Common complaint topics include:</p><ul><li>Service quality</li><li>Delay issues</li><li>Billing discrepancies</li></ul>",
+        "Tags": "complaint, refund"
+    }
+    ,
+    {
+        "title": "Complaints - Delay specific", 
+        "Updated": "2024-08-7", 
+        "content": "<p>Content for the fifth article goes here. Common complaint topics include:</p><ul><li>Service quality</li><li>Delay issues</li><li>Billing discrepancies</li></ul>",
+        "Tags": "complaint, delay"
     }
 ]
